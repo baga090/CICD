@@ -21,4 +21,4 @@ jobs:
           echo "Гілка: ${{ github.head_ref }}"
 
       - name: 3. Відображення події
-        run: echo "Workflow запущено подією: ${{ github.event_name }}"
+        run: echo "Workflow запущено подією - ${{ github.event_name }}"

@@ -1,0 +1,24 @@
+name: Simple CI/CD Workflow
+run-name: Завдання ініціював ${{ github.actor }}
+
+on:
+  pull_request:
+
+env:
+  GITHUB_ACTIONS: "Привіт, Тарасе! Змінна працює."
+
+jobs:
+  github-task-job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 1. Відображення змінної середовища
+        run: echo "Значення GITHUB_ACTIONS — ${{ env.GITHUB_ACTIONS }}"
+
+      - name: 2. Відображення назви гілки та репозиторію
+        run: |
+          echo "Репозиторій: ${{ github.repository }}"
+          echo "Гілка: ${{ github.head_ref }}"
+
+      - name: 3. Відображення події
+        run: echo "Workflow запущено подією: ${{ github.event_name }}"
